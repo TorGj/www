@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="no" xml:lang="no">
+<head>
+<script>
+function hodeFunction() {
+  document.getElementById("demo").innerHTML = "Trykk på funksjonskall i head";
+}
+</script>
+</head>
+<body>
+
+<h2>What Can JavaScript Do?</h2>
+
+<p id="demo">JavaScript can change HTML content.</p>
+<p id="demo2">Demo2</p>
+<button type="button" onclick="hodeFunction()">Funksjonskall</button>
+
+<button type="button" onclick="document.getElementById('demo').innerHTML = 'Hello JavaScript!'">Endre</button>
+
+<button type="button" onclick="document.getElementById('demo').style.fontSize='35px'">Click Me!</button>
+
+<button type="button" onclick="document.getElementById('demo').style.display='none'">Usynlig</button>
+
+<button type="button" onclick="document.getElementById('demo').style.display='block'">Synlig</button>
+
+
+<p>In this case JavaScript changes the value of the src (source) attribute of an image.</p>
+
+<button onclick="document.getElementById('myImage').src='https://www.w3schools.com/js/bulbon.gif'">Turn on the light</button>
+
+<img id="myImage" src="https://www.w3schools.com/js/pic_bulboff.gif" style="width:100px">
+
+<button onclick="document.getElementById('myImage').src='https://www.w3schools.com/js/pic_bulboff.gif'">Turn off the light</button>
+
+
+<button type="button" onclick="bodyFunction()">Try it</button>
+<script>
+function bodyFunction() {
+  document.getElementById("demo").innerHTML = "Trykka på Funksjonskall i body";
+}
+</script>
+<script src="myScript.js"></script>
+<button type="button" onclick="eksternFunction()">myScript</button>
+
+<script>
+document.getElementById("demo").innerHTML = 5 + 6;
+document.write(5 + 7);
+window.alert(5 + 8);
+alert(5 + 10);
+console.log(5 + 11);
+</script>
+
+<script>
+var carName = "Volvo";
+document.getElementById("demo2").innerHTML = carName;
+</script>
+
+<button type="button" onclick="document.write(5 + 9)">Wipe add</button>
+<button onclick="window.print()">window print</button>
+
+<script>
+let x, y, z;  // Statement 1
+x = 5;        // Statement 2
+y = 6;        // Statement 3
+z = x + y;    // Statement 4
+
+document.getElementById("demo").innerHTML = "The value of z is " + z + ".";
+</script>
+
+<p id="demo3">Demo3</p>
+<script>
+// Create an object:
+const car = {type:"Fiat", model:"500", color:"white"};
+// Change a property:
+car.color = "red";
+// Add a property:
+car.owner = "Johnson";
+// Display the property:
+document.getElementById("demo3").innerHTML = "Car owner is " + car.owner;
+</script>
+
+</body>
+</html>
