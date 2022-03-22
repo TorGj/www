@@ -1,0 +1,103 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script src="kalkulator.js"></script>
+</head>
+
+
+
+<!-- create table -->
+<body>
+<footer>
+<div class = title >Tors Sci - Edureka JavaScript Calculator</div>
+<table border="1">
+<tr>
+<td><input type="button" value="c" onclick="clr()"/> </td>
+<td colspan="3"><input type="text" id="edu"/></td>
+<!-- clr() function will call clr to clear all value -->
+</tr>
+<tr>
+<!-- creating buttons and assigning values-->
+<td><input type="button" value="+" onclick="dis('+')"/> </td>
+<td><input type="button" value="1" onclick="dis('1')"/> </td>
+<td><input type="button" value="2" onclick="dis('2')"/> </td>
+<td><input type="button" value="3" onclick="dis('3')"/> </td>
+<td><input type="button" value="Sin(x)" onclick="sin()"/> </td>
+<td><input type="button" value="ln(x)" onclick="ln()"/> </td>
+</tr>
+<tr>
+<td><input type="button" value="-" onclick="dis('-')"/> </td>
+<td><input type="button" value="4" onclick="dis('4')"/> </td>
+<td><input type="button" value="5" onclick="dis('5')"/> </td>
+<td><input type="button" value="6" onclick="dis('6')"/> </td>
+<td><input type="button" value="Cos(x)" onclick="cos()"/> </td>
+<td><input type="button" value="lg(x)" onclick="lg()"/> </td>
+</tr>
+<tr>
+<td><input type="button" value="*" onclick="dis('*')"/> </td>
+<td><input type="button" value="7" onclick="dis('7')"/> </td>
+<td><input type="button" value="8" onclick="dis('8')"/> </td>
+<td><input type="button" value="9" onclick="dis('9')"/> </td>
+<td><input type="button" value="Tan(x)" onclick="tan()"/> </td>
+<td><input type="button" value="x!" onclick="xfac()"/> </td>
+<td><input type="button" value="9" onclick="dis('9')"/> </td>
+</tr>
+<tr>
+<td><input type="button" value="/" onclick="dis('/')"/> </td>
+<td><input type="button" value="." onclick="dis('.')"/> </td>
+<td><input type="button" value="0" onclick="dis('0')"/> </td>
+<td><input type="button" value="π" onclick="dis('Math.PI')"/> </td>
+<!-- Evaluating function call eval()-->
+<td><input type="button" value="=" onclick="solve()"/> </td>
+<td><input type="button" value="e" onclick="dis('Math.E')"/> </td>
+</tr>
+</table>
+
+<label>Velg Tittelfarge:
+  <input type="color" value="#ff4545">
+
+  </footer>
+
+
+
+
+<!-- for styling -->
+<style>
+:root {
+  /* :root is a clever way of saying "the outer-most element"
+  https://eager.io/blog/communicating-between-javascript-and-css-with-css-variables/
+  */
+  --tittelfarge: #aa88cc; /* the default */
+}
+
+.title {
+border-radius: 1px;
+margin-bottom: 1px;
+text-align:center;
+width: 400px;
+color: var(--tittelfarge)
+border: solid black 1px;
+}
+
+
+input[type="button"]
+{
+border-radius: 8px;
+background-color: var(--tittelfarge)
+color: black;
+border-color:#3388ff ;
+width:100%;
+}
+
+input[type="text"]
+{
+border-radius: 10px;
+text-align: right;
+background-color:white;
+border-color: gray ;
+width:95%
+}
+</style>
+</body>
