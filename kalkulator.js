@@ -63,6 +63,14 @@ document.getElementById("edu").value = y
 }
 
 
+function rot(val)
+{
+let x = document.getElementById("edu").value
+let y = Math.sqrt(x)
+document.getElementById("edu").value = y
+}
+
+
 function xfac(val)
 {
   let x = document.getElementById("edu").value
@@ -71,11 +79,11 @@ function xfac(val)
   else if (x == 0)
       document.getElementById("edu").value = 1
   else {
-      for (var i = x - 1; i >= 1; i--) { x *= i }
+      for (let i = x - 1; i >= 1; i--) { x *= i }
       document.getElementById("edu").value = x
 }}
 
-// Konvertering til Binær, Hex, base64, sannsynlighetsregning, 
+// Konvertering til Binær, Hex, base64, sannsynlighetsregning,
 
 
 var input = document.querySelector('input')
