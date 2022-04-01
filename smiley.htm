@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+.slidecontainer {
+  width: 100%;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 30%;
+  height: 20px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #04AA6D;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #04AA6D;
+  cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="slidecontainer">
+  <input type="range" min="1" max="75" value="20" class="slider" id="vEye">Venstre Øye Radius: <span id="vn_vey"></span><br>
+  <input type="range" min="40" max="240" value="120" class="slider" id="hEye"> Høyre Øye Høyde: <span id="vn_hey"></span><br>
+  <input type="range" min="100" max="200" value="130" class="slider" id="Muen"> Munn1: <span id="vn_munen"></span><br>
+  <input type="range" min="140" max="300" value="140" class="slider" id="Muto"> Munn2: <span id="vn_munto"></span><br>
+  <input type="range" min="1" max="75" value="20" class="slider" id="hEyel"> Høyre Øye y-radius: <span id="vn_hel"></span><br>
+  <input type="range" min="100" max="200" value="130" class="slider" id="h"> iib <span id="h"></span>
+</div>
+
+<svg height="400" width="400">
+  <defs>
+      <radialGradient id="myGradient">
+        <stop offset="10%" stop-color="gold" />
+        <stop offset="95%" stop-color="red" />
+      </radialGradient>
+  </defs>
+
+<circle cx="200" cy="200" r="150" fill="yellow" id="ansiktfarge"/>
+
+<circle cx="150" cy="120" r="20" fill="url('#myGradient')" id="venstreoye"/>
+<ellipse cx="220" cy="120" rx="10" ry="20" fill="black" id="hoyreoye"/>
+
+<path d="M 130,280 q 75,50 150,0" stroke="red" stroke-width="3" fill-opacity="0" id="munn"/>
+</svg>
+
+<input type="color" value="#706ef5" id="oyf">Hudfarge
+
+<script>
+/* Hudfarge */
+let af = document.getElementById("ansiktfarge");
+let ersyk = false;
+af.onclick = function(){
+  let ansikt_f = document.getElementById("oyf").value;
+  if (ersyk === true){
+    af.setAttribute("fill", ansikt_f);
+    ersyk = false;}
+  else {
+    af.setAttribute("fill", "#A0D468");
+    ersyk = true;}};
+
+
+/* Høyre øye form */
+var helips = document.getElementById("hEyel");
+var helipsout = document.getElementById("vn_hel");
+helipsout.innerHTML = helips.value;
+helips.oninput = function() {
+  helipsout.innerHTML = this.value;
+  hoyreoye.setAttribute("ry", this.value);}
+
+/* Munn */
+let m = document.getElementById("munn");
+let mslider1 = document.getElementById("Muen");
+let mslider2 = document.getElementById("Muto");
+let mout1 = document.getElementById("vn_munen");
+var mout2 = document.getElementById("vn_munto");
+var dm = "M "; var d1 = 130; var d2 = 280;
+  mout1.innerHTML = mslider2.value;
+  mout2.innerHTML = mslider2.value;
+  mslider1.oninput = function() {
+    mout1.innerHTML = this.value;
+     d1 = this.value;}
+  mslider2.oninput = function() {
+    mout2.innerHTML = this.value;
+     d2 = this.value;
+     m.setAttribute("d", dm+d1+","+d2+" q 75,50 150,0");}
+
+
+
+
+
+/* Venstre Øye radius */
+let veyeslider = document.getElementById("vEye");
+let veyeoutput = document.getElementById("vn_vey");
+veyeoutput.innerHTML = veyeslider.value;
+veyeslider.oninput = function() {
+  veyeoutput.innerHTML = this.value;
+  venstreoye.setAttribute("r", veyeoutput.innerHTML);}
+
+
+/* Høyre Øye høyde */
+var heyeslider = document.getElementById("hEye");
+var heyeoutput = document.getElementById("vn_hey");
+heyeoutput.innerHTML = heyeslider.value;
+heyeslider.oninput = function() {
+  heyeoutput.innerHTML = this.value;
+  hoyreoye.setAttribute("cy", heyeoutput.innerHTML);}
+
+</script>
+<!-- Følgende nettsider er kode hentet fra:
+https://medium.com/@daniellevass/making-emojis-with-code-8da03e87a27f
+https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_color_get
+https://developer.mozilla.org/en-US/docs/Web/SVG/Element/radialGradient
+https://www.w3schools.com/howto/howto_js_rangeslider.asp
+
+-->
+</body>
+</html>
