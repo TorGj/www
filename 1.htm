@@ -5,7 +5,7 @@
 <h2>Dagens oppgaver</h2>
 
 <button type="button"
-onclick="document.getElementById('demo').innerHTML = Date()">
+onclick="document.getElementById('demo').innerHTML = new Date(86400000)">
 Vis dato og tid</button>
 
 
@@ -21,6 +21,11 @@ Oppgave 1</button>
 onclick="document.getElementById('demo').innerHTML = '<h1>Kople opp Atom mot GitHub</h1>'">
 Oppgave 2</button>
 
+
+<script>
+const value = document.getElementById("b5").value;
+document.write(value);
+</script>
 
 <p id="demo"></p>
 <p id="demo2"></p>

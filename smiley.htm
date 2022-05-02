@@ -8,6 +8,8 @@
   width: 100%;
 }
 
+/* Slik skrives kommentar i CSS */
+
 .slider {
   -webkit-appearance: none;
   width: 30%;
@@ -43,6 +45,8 @@
 
 <body>
 
+<!-- Slik skrives kommentarer i html-koden -->
+
 <div class="slidecontainer">
   <input type="range" min="1" max="75" value="20" class="slider" id="vEye">Venstre Øye Radius: <span id="vn_vey"></span><br>
   <input type="range" min="40" max="240" value="120" class="slider" id="hEye"> Høyre Øye Høyde: <span id="vn_hey"></span><br>
@@ -55,8 +59,8 @@
 <svg height="400" width="400">
   <defs>
       <radialGradient id="myGradient">
-        <stop offset="10%" stop-color="gold" />
-        <stop offset="95%" stop-color="red" />
+        <stop offset="10%" stop-color=#0000ff id="mygg1"/>
+        <stop offset="95%" stop-color="red" id="mygg2"/>
       </radialGradient>
   </defs>
 
@@ -68,20 +72,37 @@
 <path d="M 130,280 q 75,50 150,0" stroke="red" stroke-width="3" fill-opacity="0" id="munn"/>
 </svg>
 
-<input type="color" value="#706ef5" id="oyf">Hudfarge
+<input type="color" value="#706ef5" id="hud1">Hudfarge
+<input type="color" value="#777777" id="oyfv">Grad venstre
+<input type="color" value="#777777" id="oyfh">Grad høyre
 
 <script>
+/* myGradient fargevalg venstre øye   FUNKER IKKE*/
+let gradv = document.getElementById("venstreoye");
+gradv.onclick = function(){
+    let grad1v = document.getElementById("oyfv").value;
+    gradv.setAttribute("fill", grad1v);}
+
+/* myGradient fargevalg høyre øye */
+let gradh = document.getElementById("hoyreoye");
+gradh.onclick = function(){
+    let grad1h = document.getElementById("oyfh").value;
+    gradh.setAttribute("fill", grad1h);}
+
  /* Hudfarge */
 let af = document.getElementById("ansiktfarge");
 let ersyk = false;
 af.onclick = function(){
-  let ansikt_f = document.getElementById("oyf").value;
+  let ansikt_f = document.getElementById("hud1").value;
   if (ersyk === true){
     af.setAttribute("fill", ansikt_f);
     ersyk = false;}
   else {
     af.setAttribute("fill", "#A0D468");
     ersyk = true;}};
+
+
+
 
 
 /* Høyre øye form */

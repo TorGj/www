@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script>
+function TorsFunk() {
+  document.getElementById("demo5").innerHTML = "Denne fuksjonen er å finne i HEAD";
+}
+</script>
+</head>
+
+<body>
+
+<h2>What Can JavaScript Do?</h2>
+
+<p id="demo">JavaScript kan endre ting på siden</p>
+<p id="demo2">JavaScript kan endre begrensede ting på siden</p>
+
+
+<button type="button" onclick="document.getElementById('demo').style.fontSize='35px'">font 35</button>
+<button type="button" onclick="document.getElementById('demo').style.fontSize='15px'">font 15</button>
+
+<button type="button" onclick="document.getElementById('demo').style.display='none'">Skjul 1.linje</button>
+<button type="button" onclick="document.getElementById('demo').style.display=''">Vis 1.linje</button>
+
+<p id="demo3" style="display:none">Denne teksten var i utgangspunktet skult..</p>
+<button type="button" onclick="document.getElementById('demo3').style.display='block'">Vis skjulte ting</button>
+<button type="button" onclick="document.getElementById('demo3').style.display='none'">Tilbake til std.</button>
+
+<button type="button" onclick="TorsFunk()">Bruk funksjonen i HEAD</button>
+<button type="button" onclick="TorFunk2()">Bruk funksjonen i BODY</button>
+
+<p id="demo4"></p>
+<p id="demo5"></p>
+<p id="demo6"></p>
+
+
+<!-- DETTE ER EN KOMMENTAR -->
+
+<script>
+document.getElementById("demo4").innerHTML = "Tekststreng hentet fra et script";
+
+let text = "Tor Gjerrestad";
+document.getElementById("demo6").innerHTML = text+' inneholder <o style="font-size:50px;">'+text.length+"</o> tegn";
+
+function TorFunk2() {
+  document.getElementById("demo5").innerHTML = "Dette ligger i funksjonen TorFunk2() . i script i BODY";
+}
+</script>
+
+</body>
+</html>
+
+
+</body>
+</html>
