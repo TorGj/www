@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <script>
+
+
+  function HentAdr() {
+    var adresse = document.vdl.vlnk.value;
+    //let adresse = document.vlnk.value;
+    document.getElementById("sitrap").innerHTML = adresse;
+
+    const fs = require('fs');
+    const youtubedl = require('youtube-dl');
+
+    let video = youtubedl(adresse,['--format=18'],);
+
+    // Will be called when the download starts.
+    video.on('info', function(info) {
+      console.log('Your download is soon complete...');
+      console.log('filename: ' + info._filename);
+      console.log('size: ' + info.size);
+    })
+
+    video.pipe(fs.createWriteStream('downloaded_vid.mp4'));
+  }
+
+  </script>
+</head>
+<body>
+
+<p>Fill out info below to download your video:</p>
+
+<FORM name=vdl id="knabbe">
+  <input type="text" name="vlnk" size="150" value="Replace this!"><br>
+  <br><br>
+  <input onclick=HentAdr() type="button" value="Download Now" name=dln><br>
+</form>
+
+<p id="sitrap">Ikke no</p>
+
+
+
+</body>
+</html>
