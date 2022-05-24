@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+.temaer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.projects__cards{align-items:center;display:flex;flex-wrap:wrap;gap:20px;justify-content:flex-start}
+.projects__card{border:1px solid #08b;border-radius:8px;max-width:350px;padding:20px}
+.projects__card h3{font-size:32px;font-weight:300;margin-bottom:10px}
+.projects__card p{font-size:16px;margin:20px 0}
+.projects__card img{border-radius:8px;height:auto;margin:20px 0 10px;width:100%}
+.projects__card .button{margin:10px 5px 0}
+</style>
+
+</head>
+<body>
+
+  <section className="projects">
+      <h2>What I do</h2>
+
+      <div className="projects__cards">
+
+          <div className="projects__card">
+              <h3>Experiments</h3>
+              <img src={experiments} alt="Experimens Developing Page" />
+              <p>

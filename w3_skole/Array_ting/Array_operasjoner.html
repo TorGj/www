@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Arrays</h2>
+
+<b>Personbilmerker:</b>
+<p id="Biler"></p>
+
+<b>Lastebilmerker:</b>
+<p id="LasteBiler"> </p>
+
+<b>Denne er første i array:</b>
+<p id="1LB"></p>
+
+<b>nå er lista over biler oppdatert:</b>
+<p id="Bil_oppd"></p>
+
+<script>
+const cars = [
+  "Saab",
+  "Volvo",
+  "BMW"
+];
+document.getElementById("Biler").innerHTML = cars;
+
+const Lcars = [];
+Lcars[0]= "MAN";
+Lcars[1]= "Mercedes";
+Lcars[2]= "Scania";
+document.getElementById("LasteBiler").innerHTML = Lcars;
+document.getElementById("1LB").innerHTML = Lcars[0];
+
+cars[0] = "Opel";
+document.getElementById("Bil_oppd").innerHTML = cars;
+
+</script>
+
+</body>
+</html>
